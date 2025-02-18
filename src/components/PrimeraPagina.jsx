@@ -20,7 +20,6 @@ const items = [
         <header className="header">
         <nav className="nav">
             <img className='logo'src={joposep}></img>
-            <a href="#afegir logo">afegir logo</a>
             <a href="#Videojocs">Videojocs</a>
             <a href="#Anime">Anime</a>
             <a href="#Pel·lícules">Pel·lícules</a>
