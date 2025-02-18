@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import PrimeraPagina from './components/PaginaPrincipal';
+import PaginaPrincipal from './components/PaginaPrincipal';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Videojocs from './components/Videojocs';
 import Anime from './components/Anime';
@@ -13,7 +13,7 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={<PrimeraPagina />} />
+          <Route path="/" element={<PaginaPrincipal />} />
           <Route path="/Videojocs" element={<Videojocs />} />
           <Route path="/Anime" element={<Anime />} />
           <Route path="/Pelis" element={<Pelis />} />

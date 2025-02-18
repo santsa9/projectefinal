@@ -4,7 +4,7 @@ import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
 
-function MenuPrincipal() {
+function PaginaPrincipal() {
     const items = [
         { id: 1, title: "The Legend of Zelda: Breath of the Wild", score: 97, type: "Game" },
         { id: 2, title: "The Last of Us Part II", score: 93, type: "Game" },
@@ -116,4 +116,4 @@ function MenuPrincipal() {
     );
 };
 
-export default MenuPrincipal;
+export default PaginaPrincipal;
