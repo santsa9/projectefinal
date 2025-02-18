@@ -2,13 +2,12 @@ import React from 'react';
 import './App.css';
 
 const App = () => {
-  // Datos de ejemplo para juegos/películas
   const items = [
-    { id: 1, title: "The Legend of Zelda: Breath of the Wild", score: 97, type: "Game" },
-    { id: 2, title: "The Last of Us Part II", score: 93, type: "Game" },
-    { id: 3, title: "Breaking Bad", score: 95, type: "TV Show" },
-    { id: 4, title: "The Godfather", score: 98, type: "Movie" },
-    { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Game" },
+    { id: 1, title: "Attack on Titan", score: 97, type: "Anime" },
+    { id: 2, title: "El Santuari", score: 89, type: "Restaurant" },
+    { id: 3, title: "Breaking Bad", score: 95, type: "Serie" },
+    { id: 4, title: "The Godfather", score: 98, type: "Pel·lícula" },
+    { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Videojoc" },
   ];
 
   return (
@@ -16,14 +15,14 @@ const App = () => {
       {/* Capçalera */}
       <header className="header">
         <nav className="nav">
-          <a href="#games">afegir logo</a>
+          <alogo href="#games">afegir logo</alogo>
           <a href="#games">Videojocs</a>
           <a href="#games">Anime</a>
           <a href="#movies">Pel·lícules</a>
           <a href="#tv-shows">Series</a>
           <a href="#games">Restaurants</a>
-          <a href="#games">afegirbuscador</a>
-          <a href="#games">afegirregistre</a>
+          <abuscador href="#games">afegirbuscador</abuscador>
+          <aregistre href="#games">afegirregistre</aregistre>
         </nav>
       </header>
 
@@ -35,7 +34,7 @@ const App = () => {
             <div key={item.id} className="item">
               <h3>{item.title}</h3>
               <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
             </div>
           ))}
         </div>
@@ -45,7 +44,7 @@ const App = () => {
             <div key={item.id} className="item">
               <h3>{item.title}</h3>
               <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
             </div>
           ))}
         </div>
@@ -55,7 +54,7 @@ const App = () => {
             <div key={item.id} className="item">
               <h3>{item.title}</h3>
               <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
             </div>
           ))}
         </div>
@@ -65,7 +64,7 @@ const App = () => {
             <div key={item.id} className="item">
               <h3>{item.title}</h3>
               <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
             </div>
           ))}
         </div>
@@ -75,7 +74,7 @@ const App = () => {
             <div key={item.id} className="item">
               <h3>{item.title}</h3>
               <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
             </div>
           ))}
         </div>

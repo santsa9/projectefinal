@@ -19,7 +19,7 @@ body {
   text-align: center;
 }
 
-.nav a {
+.nav a, alogo,abuscador, aregistre  {
   color: #61dafb;
   margin: 0 1rem;
   text-decoration: none;
@@ -67,12 +67,17 @@ body {
 }
 
 .score.high {
-  color: #fff;
+  color: #000000;
   background-color: #4caf50; /* Verde */
 }
 
+.score.mid {
+  color: #000000;
+  background-color: #e28b07; /* Taronja */
+}
+
 .score.low {
-  color: #fff;
+  color: #000000;
   background-color: #f44336; /* Rojo */
 }
 
