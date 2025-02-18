@@ -1,5 +1,8 @@
 import '../App.css';
 import { useState } from 'react';
+import joposep from '../imagenes/joj.png';
+import lupa from '../imagenes/lupa.png';
+import usuari from '../imagenes/use.png';
 
 function MenuPrincipal() {
 
@@ -16,20 +19,30 @@ const items = [
         {/* Capçalera */}
         <header className="header">
         <nav className="nav">
-            <a href="#games">afegir logo</a>
-            <a href="#games">Videojocs</a>
-            <a href="#games">Anime</a>
-            <a href="#movies">Pel·lícules</a>
-            <a href="#tv-shows">Series</a>
-            <a href="#games">Restaurants</a>
-            <a href="#games">afegirbuscador</a>
-            <a href="#games">afegirregistre</a>
+            <img className='logo'src={joposep}></img>
+            <a href="#afegir logo">afegir logo</a>
+            <a href="#Videojocs">Videojocs</a>
+            <a href="#Anime">Anime</a>
+            <a href="#Pel·lícules">Pel·lícules</a>
+            <a href="#Series">Series</a>
+            <a href="#Restaurants">Restaurants</a>
+            <div className='fuentebusqueda'>
+                <input className='busqueda' type="search" style={{border:'solid 2px slateblue'}}/>
+                <img className='lupa' src={lupa}></img>
+            </div>
+            <div className='botoregis'>
+                <button className='registre'>Registre</button>
+                <img className='logiusuari' src={usuari}></img>
+            </div>
         </nav>
         </header>
 
         {/* Contingut principal */}
         <main className="content">
-        <h2>Videojocs</h2>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TYYyMu3pzL4?si=H0c9__tovf0QIGWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h2 className='tituljocs'>Videojocs</h2>
+        <hr></hr>
+        <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div className="item-list">
             {items.map((item) => (
             <div key={item.id} className="item">
@@ -39,7 +52,8 @@ const items = [
             </div>
             ))}
         </div>
-        <h2>Anime</h2>
+        <h2 className='titulanime'>Anime</h2>
+        <hr></hr>
         <div className="item-list">
             {items.map((item) => (
             <div key={item.id} className="item">
@@ -49,7 +63,8 @@ const items = [
             </div>
             ))}
         </div>
-        <h2>Pel·lícules</h2>
+        <h2 className='titulpeli'>Pel·lícules</h2>
+        <hr></hr>
         <div className="item-list">
             {items.map((item) => (
             <div key={item.id} className="item">
@@ -59,7 +74,8 @@ const items = [
             </div>
             ))}
         </div>
-        <h2>Series</h2>
+        <h2 className='titulseries'>Series</h2>
+        <hr></hr>
         <div className="item-list">
             {items.map((item) => (
             <div key={item.id} className="item">
@@ -69,7 +85,8 @@ const items = [
             </div>
             ))}
         </div>
-        <h2>Restaurants</h2>
+        <h2 className='titulrestaurants'>Restaurants</h2>
+        <hr></hr>
         <div className="item-list">
             {items.map((item) => (
             <div key={item.id} className="item">
@@ -80,11 +97,15 @@ const items = [
             ))}
         </div>
         </main>
-
-        {/* Footer */}
-        <footer className="footer">
-        <p>Pàgina d'oci John i Josep</p>
-        </footer>
+        <div>
+            {/* Footer */}
+            <footer className="footer">
+            <div className='movelog'>
+                <img className='josep'src={joposep}></img>
+            </div>
+            <p className='titulfoter'>Pàgina d'oci John i Josep</p>
+            </footer>
+        </div>
     </div>
     );
 };
