@@ -31,7 +31,7 @@ function PaginaPrincipal() {
                 </Link>
                     <a href="/Videojocs">Videojocs</a>
                     <a href="/Anime">Anime</a>
-                    <a href="/Pelis">Pelis</a>
+                    <a href="/Pelis">Pel·lícules</a>
                     <a href="/Series">Series</a>
                     <a href="/Restaurants">Restaurants</a>
                     <div className="fuentebusqueda">
