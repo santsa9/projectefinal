@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
+import ReactPlayer from 'react-player'
 
-function MenuPrincipal() {
+function PaginaPrincipal() {
     const items = [
         { id: 1, title: "The Legend of Zelda: Breath of the Wild", score: 97, type: "Game" },
         { id: 2, title: "The Last of Us Part II", score: 93, type: "Game" },
@@ -39,12 +40,15 @@ function MenuPrincipal() {
 
             {/* Contingut principal */}
             <main className="content">
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TYYyMu3pzL4?si=H0c9__tovf0QIGWY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <ReactPlayer
+                    url='https://youtu.be/1Nc1C4FxURg?si=oR8qzrKwmDoSNU5w'
+                    playing
+                    controls='true'
+                    loop
+                    
+                />
                 <h2 className="tituljocs">Videojocs</h2>
                 <hr />
-                <Link to="/videojocs">
-                    <h2 className="tituljocs" style={{ cursor: 'pointer', color: 'blue' }}>Videojocs</h2>
-                </Link>
                 <iframe className="zelda" width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 <div className="item-list">
                     {items.map((item) => (
@@ -116,4 +120,4 @@ function MenuPrincipal() {
     );
 };
 
-export default MenuPrincipal;
+export default PaginaPrincipal;
