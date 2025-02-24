@@ -30,10 +30,10 @@ function PaginaPrincipal() {
                     <button onClick={handleRedirect} className='botologo'></button>
                 </Link>
                     <a href="/Videojocs">Videojocs</a>
-                    <a href="#Anime">Anime</a>
-                    <a href="#Pelis">Pelis</a>
-                    <a href="#Series">Series</a>
-                    <a href="#Restaurants">Restaurants</a>
+                    <a href="/Anime">Anime</a>
+                    <a href="/Pelis">Pelis</a>
+                    <a href="/Series">Series</a>
+                    <a href="/Restaurants">Restaurants</a>
                     <div className="fuentebusqueda">
                         <input className="busqueda" type="search" style={{ border: 'solid 2px slateblue' }} />
                         <img className="lupa" src={lupa} alt="Lupa" />
@@ -48,8 +48,9 @@ function PaginaPrincipal() {
             {/* Contingut principal */}
             <main className="content">
                 <ReactPlayer
+                
                     playing
-                    controls='false'
+                    controls='true'
                     loop
                     
                 />
