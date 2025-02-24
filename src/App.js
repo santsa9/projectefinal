@@ -1,5 +1,12 @@
 import React from 'react';
 import './App.css';
+import PrimeraPagina from './components/PaginaPrincipal';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Videojocs from './components/Videojocs';
+import Anime from './components/Anime';
+import Pelis from './components/Pelis';
+import Series from './components/Series';
+import Restaurants from './components/Restaurants';
 
 const App = () => {
   const items = [
