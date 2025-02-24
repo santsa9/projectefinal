@@ -3,7 +3,7 @@ import { useState } from 'react';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 function Anime() {
 
     const items = [
@@ -13,13 +13,22 @@ function Anime() {
         { id: 4, title: "Bleach", score: 98, type: "Anime" },
         { id: 5, title: "Attack on Titan", score: 96, type: "Anime" },
         ];
+
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate("/"); // Redirige a la página principal
+    };
     
         return (
         <div className="app">
             {/* Capçalera */}
             <header className="header">
             <nav className="nav">
-                <img className='logo'src={joposep}></img>
+                <Link to="/">
+                    <img className="logo" src={joposep} alt="Logo" />
+                    <button onClick={handleRedirect} className='botologo'></button>
+                </Link>
                 <Link to="/videojocs">Videojocs</Link>
                 <Link to="/anime">Anime</Link>
                 <Link to="/Pelis">Pel·lícules</Link>
@@ -39,7 +48,7 @@ function Anime() {
             {/* Contingut principal */}
             <main className="content">
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TYYyMu3pzL4?si=H0c9__tovf0QIGWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <h2 className='tituljocs'>Anime</h2>
+            <h2 className='tituljocs'>Videojocs</h2>
             <hr></hr>
             <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div className="item-list">

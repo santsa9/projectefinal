@@ -3,7 +3,7 @@ import { useState } from 'react';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 function Pelis() {
 
     const items = [
@@ -14,12 +14,21 @@ function Pelis() {
         { id: 5, title: "Avengers: Endgame", score: 96, type: "Anime" },
         ];
     
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate("/"); // Redirige a la página principal
+    };
+
         return (
         <div className="app">
             {/* Capçalera */}
             <header className="header">
             <nav className="nav">
-                <img className='logo'src={joposep}></img>
+                <Link to="/">
+                    <img className="logo" src={joposep} alt="Logo" />
+                    <button onClick={handleRedirect} className='botologo'></button>
+                </Link>
                 <Link to="/videojocs">Videojocs</Link>
                 <Link to="/anime">Anime</Link>
                 <Link to="/Pelis">Pel·lícules</Link>

@@ -3,6 +3,13 @@ import { useState } from 'react';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
+import { Link,useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
+
+const handleRedirect = () => {
+    navigate("/"); // Redirige a la página principal
+};
 
 function MenuPrincipal() {
 
@@ -11,7 +18,10 @@ function MenuPrincipal() {
         {/* Capçalera */}
         <header className="header">
         <nav className="nav">
-            <img className='logo'src={joposep}></img>
+            <Link to="/">
+                <img className="logo" src={joposep} alt="Logo" />
+                <button onClick={handleRedirect} className='botologo'></button>
+            </Link>
             <a href="#Videojocs">Videojocs</a>
             <a href="#Anime">Anime</a>
             <a href="#Pel·lícules">Pel·lícules</a>
