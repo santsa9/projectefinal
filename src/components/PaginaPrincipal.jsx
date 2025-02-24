@@ -1,5 +1,5 @@
 import '../App.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
@@ -14,6 +14,12 @@ function PaginaPrincipal() {
         { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Game" },
     ];
 
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate("/"); // Redirige a la página principal
+    };
+
     return (
         <div className="app">
             {/* Capçalera */}
@@ -21,6 +27,7 @@ function PaginaPrincipal() {
                 <nav className="nav">
                 <Link to="/">
                     <img className="logo" src={joposep} alt="Logo" />
+                    <button onClick={handleRedirect} className='botologo'></button>
                 </Link>
                     <a href="/Videojocs">Videojocs</a>
                     <a href="#Anime">Anime</a>
@@ -41,9 +48,8 @@ function PaginaPrincipal() {
             {/* Contingut principal */}
             <main className="content">
                 <ReactPlayer
-                    url='https://youtu.be/1Nc1C4FxURg?si=oR8qzrKwmDoSNU5w'
                     playing
-                    controls='true'
+                    controls='false'
                     loop
                     
                 />

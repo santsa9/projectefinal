@@ -41,8 +41,14 @@ body {
 .logo {
   position: relative;
   width: 70px;
-  padding-right: 70px;
   overflow: hidden;
+}
+.botologo {
+  position: relative;
+  background: none;
+  width: 65px;
+  height: 85px;
+  right: 68px;
 }
 
 /* Contenido principal */
@@ -155,6 +161,7 @@ body {
   height: 42px;
   background: rgb(126, 93, 215);
   border-radius: 10px;
+  border: none;
 }
 
 .logiusuari {

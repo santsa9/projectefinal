@@ -3,7 +3,7 @@ import { useState } from 'react';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 function Videojocs() {
 
@@ -14,13 +14,21 @@ const items = [
     { id: 4, title: "The Godfather", score: 98, type: "Movie" },
     { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Game" },
     ];
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate("/"); // Redirige a la página principal
+    };
 
     return (
     <div className="app">
         {/* Capçalera */}
         <header className="header">
         <nav className="nav">
-            <img className='logo'src={joposep}></img>
+            <Link to="/">
+                <img className="logo" src={joposep} alt="Logo" />
+                <button onClick={handleRedirect} className='botologo'></button>
+            </Link>
             <Link to="/videojocs">Videojocs</Link>
             <Link to="/anime">Anime</Link>
             <Link to="/Pelis">Pel·lícules</Link>
