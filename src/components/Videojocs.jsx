@@ -14,6 +14,7 @@ function Videojocs() {
         { id: 4, title: "God of War", score: 98, type: "Game" },
         { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Game" },
     ];
+    
     const navigate = useNavigate();
 
     const handleRedirect = () => {
