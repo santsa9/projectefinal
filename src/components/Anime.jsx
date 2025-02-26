@@ -24,7 +24,7 @@ function Anime() {
         navigate("/Registre")
     };
     
-        return (
+    return (
         <div className="app">
             {/* Capçalera */}
             <header className="header">
@@ -50,13 +50,9 @@ function Anime() {
                 </div>
             </nav>
             </header>
-    
+
             {/* Contingut principal */}
             <main className="content">
-<<<<<<< HEAD
-=======
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TYYyMu3pzL4?si=H0c9__tovf0QIGWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
->>>>>>> b57e8f926671630c7347b52046ad581df0605086
             <h2 className='tituljocs'>Anime</h2>
             <hr></hr>
             <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -80,7 +76,7 @@ function Anime() {
                 </footer>
             </div>
         </div>
-        );
-    };
-    export default Anime;
+    );
+};
+export default Anime;
     
