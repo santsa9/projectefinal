@@ -20,6 +20,10 @@ function PaginaPrincipal() {
         navigate("/"); // Redirige a la página principal
     };
 
+    const Registre = () => {
+        navigate("/Registre")
+    };
+
     return (
         <div className="app">
             {/* Capçalera */}
@@ -39,7 +43,9 @@ function PaginaPrincipal() {
                         <img className="lupa" src={lupa} alt="Lupa" />
                     </div>
                     <div className="botoregis">
-                        <button className="registre">Registre</button>
+                    <Link to="/Registre">
+                        <button onClick={Registre} className="registre">Registre</button>
+                    </Link>
                         <img className="logiusuari" src={usuari} alt="Usuari" />
                     </div>
                 </nav>
@@ -47,13 +53,6 @@ function PaginaPrincipal() {
 
             {/* Contingut principal */}
             <main className="content">
-                <ReactPlayer
-                
-                    playing
-                    controls='true'
-                    loop
-                    
-                />
                 <h2 className="tituljocs">Videojocs</h2>
                 <hr />
                 <iframe className="zelda" width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
