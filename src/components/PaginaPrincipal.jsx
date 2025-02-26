@@ -1,10 +1,11 @@
 import '../App.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
+import ReactPlayer from 'react-player'
 
-function MenuPrincipal() {
+function PaginaPrincipal() {
     const items = [
         { id: 1, title: "The Legend of Zelda: Breath of the Wild", score: 97, type: "Game" },
         { id: 2, title: "The Last of Us Part II", score: 93, type: "Game" },
@@ -13,6 +14,16 @@ function MenuPrincipal() {
         { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Game" },
     ];
 
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate("/"); // Redirige a la página principal
+    };
+
+    const Registre = () => {
+        navigate("/Registre")
+    };
+
     return (
         <div className="app">
             {/* Capçalera */}
@@ -20,18 +31,21 @@ function MenuPrincipal() {
                 <nav className="nav">
                 <Link to="/">
                     <img className="logo" src={joposep} alt="Logo" />
+                    <button onClick={handleRedirect} className='botologo'></button>
                 </Link>
                     <a href="/Videojocs">Videojocs</a>
-                    <a href="#Anime">Anime</a>
-                    <a href="#Pelis">Pelis</a>
-                    <a href="#Series">Series</a>
-                    <a href="#Restaurants">Restaurants</a>
+                    <a href="/Anime">Anime</a>
+                    <a href="/Pelis">Pel·lícules</a>
+                    <a href="/Series">Series</a>
+                    <a href="/Restaurants">Restaurants</a>
                     <div className="fuentebusqueda">
                         <input className="busqueda" type="search" style={{ border: 'solid 2px slateblue' }} />
                         <img className="lupa" src={lupa} alt="Lupa" />
                     </div>
                     <div className="botoregis">
-                        <button className="registre">Registre</button>
+                    <Link to="/Registre">
+                        <button onClick={Registre} className="registre">Registre</button>
+                    </Link>
                         <img className="logiusuari" src={usuari} alt="Usuari" />
                     </div>
                 </nav>
@@ -39,12 +53,8 @@ function MenuPrincipal() {
 
             {/* Contingut principal */}
             <main className="content">
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TYYyMu3pzL4?si=H0c9__tovf0QIGWY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 <h2 className="tituljocs">Videojocs</h2>
                 <hr />
-                <Link to="/videojocs">
-                    <h2 className="tituljocs" style={{ cursor: 'pointer', color: 'blue' }}>Videojocs</h2>
-                </Link>
                 <iframe className="zelda" width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 <div className="item-list">
                     {items.map((item) => (
@@ -116,4 +126,4 @@ function MenuPrincipal() {
     );
 };
 
-export default MenuPrincipal;
+export default PaginaPrincipal;

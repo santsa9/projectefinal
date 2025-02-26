@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import PrimeraPagina from './components/PaginaPrincipal';
+import PaginaPrincipal from './components/PaginaPrincipal';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Videojocs from './components/Videojocs';
 import Anime from './components/Anime';
 import Pelis from './components/Pelis';
 import Series from './components/Series';
 import Restaurants from './components/Restaurants';
+import Registre from './components/Registre';
 
 const App = () => {
   const items = [
@@ -18,80 +19,20 @@ const App = () => {
   ];
 
   return (
-    <div className="app">
-      {/* Capçalera */}
-      <header className="header">
-        <nav className="nav">
-          <alogo href="#games">afegir logo</alogo>
-          <a href="#games">Videojocs</a>
-          <a href="#games">Anime</a>
-          <a href="#movies">Pel·lícules</a>
-          <a href="#tv-shows">Series</a>
-          <a href="#games">Restaurants</a>
-          <abuscador href="#games">afegirbuscador</abuscador>
-          <aregistre href="#games">afegirregistre</aregistre>
-        </nav>
-      </header>
-
-      {/* Contingut principal */}
-      <main className="content">
-        <h2>Videojocs</h2>
-        <div className="item-list">
-          {items.map((item) => (
-            <div key={item.id} className="item">
-              <h3>{item.title}</h3>
-              <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
-            </div>
-          ))}
-        </div>
-        <h2>Anime</h2>
-        <div className="item-list">
-          {items.map((item) => (
-            <div key={item.id} className="item">
-              <h3>{item.title}</h3>
-              <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
-            </div>
-          ))}
-        </div>
-        <h2>Pel·lícules</h2>
-        <div className="item-list">
-          {items.map((item) => (
-            <div key={item.id} className="item">
-              <h3>{item.title}</h3>
-              <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
-            </div>
-          ))}
-        </div>
-        <h2>Series</h2>
-        <div className="item-list">
-          {items.map((item) => (
-            <div key={item.id} className="item">
-              <h3>{item.title}</h3>
-              <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
-            </div>
-          ))}
-        </div>
-        <h2>Restaurants</h2>
-        <div className="item-list">
-          {items.map((item) => (
-            <div key={item.id} className="item">
-              <h3>{item.title}</h3>
-              <p>Type: {item.type}</p>
-              <div className={`score ${item.score >= 50 ? "high" : "low"}`}>{item.score}</div>
-            </div>
-          ))}
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="footer">
-        <p>Pàgina d'oci John i Josep</p>
-      </footer>
-    </div>
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<PaginaPrincipal />} />
+          <Route path="/Videojocs" element={<Videojocs />} />
+          <Route path="/Anime" element={<Anime />} />
+          <Route path="/Pelis" element={<Pelis />} />
+          <Route path="/Series" element={<Series />} />
+          <Route path="/Restaurants" element={<Restaurants />} />
+          <Route path="/Registre" element={<Registre />} />
+        </Routes>
+      </div>
+    </Router>
+   
   );
 };
 
