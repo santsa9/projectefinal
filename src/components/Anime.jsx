@@ -31,7 +31,7 @@ function Anime() {
                 </Link>
                 <Link to="/videojocs">Videojocs</Link>
                 <Link to="/anime">Anime</Link>
-                <Link to="/Pelis">Pel·lícules</Link>
+                <Link to="/pelis">Pel·lícules</Link>
                 <Link to="/series">Series</Link>
                 <Link to="/restaurants">Restaurants</Link>
                 <div className='fuentebusqueda'>
