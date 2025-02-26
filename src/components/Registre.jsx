@@ -9,10 +9,6 @@ export default function AuthForm() {
     const handleRedirect = () => {
         navigate("/"); // Redirige a la página principal
     };
-    
-    const Registre = () => {
-        navigate("/Registre")
-    };
 
   const [isLogin, setIsLogin] = useState(false);
 
