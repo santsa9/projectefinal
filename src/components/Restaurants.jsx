@@ -4,6 +4,7 @@ import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
 import { Link,useNavigate } from 'react-router-dom';
+
 function Restaurants() {
 
     const items = [
@@ -14,14 +15,17 @@ function Restaurants() {
         { id: 5, title: "El Rincón Gallego", score: 96, type: "Restaurant" },
         ];
 
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
-        const handleRedirect = () => {
-            navigate("/"); // Redirige a la página principal
-        };
+    const handleRedirect = () => {
+        navigate("/"); // Redirige a la página principal
+    };
     
+    const Registre = () => {
+        navigate("/Registre")
+    };
     
-        return (
+    return (
         <div className="app">
             {/* Capçalera */}
             <header className="header">
@@ -40,7 +44,9 @@ function Restaurants() {
                     <img className='lupa' src={lupa}></img>
                 </div>
                 <div className='botoregis'>
-                    <button className='registre'>Registre</button>
+                <Link to="/Registre">
+                    <button onClick={Registre} className="registre">Registre</button>
+                </Link>
                     <img className='logiusuari' src={usuari}></img>
                 </div>
             </nav>
@@ -48,7 +54,6 @@ function Restaurants() {
     
             {/* Contingut principal */}
             <main className="content">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TYYyMu3pzL4?si=H0c9__tovf0QIGWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <h2 className='tituljocs'>Restaurants</h2>
             <hr></hr>
             <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -72,7 +77,7 @@ function Restaurants() {
                 </footer>
             </div>
         </div>
-        );
-    };
-    export default Restaurants;
+    );
+};
+export default Restaurants;
     

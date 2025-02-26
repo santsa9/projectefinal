@@ -14,13 +14,17 @@ function Series() {
         { id: 5, title: "The Handmaid tale", score: 96, type: "TV Show" },
         ];
         
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
-        const handleRedirect = () => {
-            navigate("/"); // Redirige a la página principal
-        };
+    const handleRedirect = () => {
+        navigate("/"); // Redirige a la página principal
+    };
+
+    const Registre = () => {
+        navigate("/Registre")
+    };
     
-        return (
+    return (
         <div className="app">
             {/* Capçalera */}
             <header className="header">
@@ -39,7 +43,9 @@ function Series() {
                     <img className='lupa' src={lupa}></img>
                 </div>
                 <div className='botoregis'>
-                    <button className='registre'>Registre</button>
+                <Link to="/Registre">
+                    <button onClick={Registre} className="registre">Registre</button>
+                </Link>
                     <img className='logiusuari' src={usuari}></img>
                 </div>
             </nav>
@@ -47,7 +53,6 @@ function Series() {
     
             {/* Contingut principal */}
             <main className="content">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TYYyMu3pzL4?si=H0c9__tovf0QIGWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <h2 className='tituljocs'>Series</h2>
             <hr></hr>
             <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -71,7 +76,7 @@ function Series() {
                 </footer>
             </div>
         </div>
-        );
-    };
-    export default Series;
+    );
+};
+export default Series;
     

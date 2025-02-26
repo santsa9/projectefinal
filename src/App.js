@@ -7,6 +7,7 @@ import Anime from './components/Anime';
 import Pelis from './components/Pelis';
 import Series from './components/Series';
 import Restaurants from './components/Restaurants';
+import Registre from './components/Registre';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/Pelis" element={<Pelis />} />
           <Route path="/Series" element={<Series />} />
           <Route path="/Restaurants" element={<Restaurants />} />
+          <Route path="/Registre" element={<Registre />} />
         </Routes>
       </div>
     </Router>
