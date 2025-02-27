@@ -45,7 +45,9 @@ function PaginaPrincipal() {
                 <Link to="/Registre">
                     <button onClick={Registre} className="registre">Registre</button>
                 </Link>
+                <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
                     <img className="logiusuari" src={usuari} alt="Usuari" />
+                </button>
                 </div>
             </nav>
         </header>
