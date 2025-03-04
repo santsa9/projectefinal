@@ -39,18 +39,20 @@ body {
   text-decoration: underline 2px;
 }
 .logo {
-  position: relative;
+  position: absolute;
   width: 70px;
   overflow: hidden;
 }
 .botologo {
-  position: relative;
+  position: absolute;
   background: none;
   width: 65px;
   height: 85px;
   right: 68px;
   border: none;
   cursor: pointer;
+  left:50%;
+  right:50%;
 }
 
 /* Contenido principal */
@@ -240,6 +242,11 @@ body {
   justify-content: center;
   background: black;
 }
+.logo_registre{
+  position: absolute;
+  width: 70px;
+  overflow: hidden;
+}
 .cuadro {
   position: relative;
   width: 550px;
@@ -253,11 +260,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #4b0082;
+  background-color: rgb(20, 12, 47);
 }
 
 .form-box {
-  background: rgb(112, 88, 110);
+  background: rgb(126, 93, 215);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -290,7 +297,7 @@ body {
 
 .description {
   font-size: 14px;
-  color: #555;
+  color: #000000;
   margin-bottom: 15px;
 }
 
@@ -308,13 +315,13 @@ body {
 .input-field {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 5px;
 }
 
 .info-text {
   font-size: 12px;
-  color: gray;
+  color: rgb(0, 0, 0);
   margin-top: 5px;
 }
 

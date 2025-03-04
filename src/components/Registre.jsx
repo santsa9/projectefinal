@@ -16,7 +16,7 @@ export default function AuthForm() {
     <div className="container">
       <div className="form-box">
         <Link to="/">
-            <img className="logo" src={joposep} alt="Logo" />
+            <img className="logo_registre" src={joposep} alt="Logo" />
             <button onClick={handleRedirect} className='botologo'></button>
         </Link>
         <div className="tab-menu">
