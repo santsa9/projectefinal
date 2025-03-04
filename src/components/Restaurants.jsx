@@ -47,7 +47,9 @@ function Restaurants() {
                 <Link to="/Registre">
                     <button onClick={Registre} className="registre">Registre</button>
                 </Link>
-                    <img className='logiusuari' src={usuari}></img>
+                <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
+                    <img className="logiusuari" src={usuari} alt="Usuari" />
+                </button>
                 </div>
             </nav>
             </header>

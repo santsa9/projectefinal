@@ -172,10 +172,16 @@ body {
 
 .logiusuari {
   position: relative;
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
+  background-color: rgb(17, 16, 35);
+}
 
+.usuari-btn {
+  background-color: rgb(17, 16, 35);
+  border: none;
+  padding: 0%;
 }
 
 .score {
