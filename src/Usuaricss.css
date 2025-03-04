@@ -10,11 +10,11 @@
     background: #5731a8;
     color: white;
     padding: 20px;
-    height: 100vh;
+    height: 72vh;
   }
   
   .sidebar h2 {
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
   
   .sidebar-btn {
@@ -69,3 +69,17 @@
     width: 250px;
   }
   
+  .logo {
+    position: relative;
+    width: 70px;
+    overflow: hidden;
+  }
+  .botologo {
+    position: relative;
+    background: none;
+    width: 65px;
+    height: 85px;
+    right: 68px;
+    border: none;
+    cursor: pointer;
+  }
