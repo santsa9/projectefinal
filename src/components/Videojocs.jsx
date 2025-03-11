@@ -33,41 +33,27 @@ function Videojocs() {
             <div className="menu">
                 {/* Capçalera */}
                 <div className="nav">
-                <Link to="/">
-                    <img className="logo" src={joposep} alt="Logo" />
-                    <button onClick={handleRedirect} className='botologo'></button>
-                </Link>
-                    <a href="/Videojocs">Videojocs</a>
-                    <a href="/Anime">Anime</a>
-                    <a href="/Pelis">Pel·lícules</a>
-                    <a href="/Series">Series</a>
-                    <a href="/Restaurants">Restaurants</a>
-                    <div className="fuentebusqueda">
-                        <input className="busqueda" type="search" style={{ border: 'solid 2px slateblue' }} />
-                        <img className="lupa" src={lupa} alt="Lupa" />
+                    <Link to="/">
+                        <img className="logo" src={joposep} alt="Logo" />
+                        <button onClick={handleRedirect} className='botologo'></button>
+                    </Link>
+                    <Link to="/videojocs">Videojocs</Link>
+                    <Link to="/anime">Anime</Link>
+                    <Link to="/Pelis">Pel·lícules</Link>
+                    <Link to="/series">Series</Link>
+                    <Link to="/restaurants">Restaurants</Link>
+                    <div className='fuentebusqueda'>
+                        <input className='busqueda' type="search" style={{border:'solid 2px slateblue'}}/>
+                        <img className='lupa' src={lupa}></img>
                     </div>
-                    <div className="botoregis">
+                    <div className='botoregis'>
                     <Link to="/Registre">
                         <button onClick={Registre} className="registre">Registre</button>
                     </Link>
+                    <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
                         <img className="logiusuari" src={usuari} alt="Usuari" />
+                    </button>
                     </div>
-                <Link to="/videojocs">Videojocs</Link>
-                <Link to="/anime">Anime</Link>
-                <Link to="/Pelis">Pel·lícules</Link>
-                <Link to="/series">Series</Link>
-                <Link to="/restaurants">Restaurants</Link>
-                <div className='fuentebusqueda'>
-                    <input className='busqueda' type="search" style={{border:'solid 2px slateblue'}}/>
-                    <img className='lupa' src={lupa}></img>
-                </div>
-                <div className='botoregis'>
-                <Link to="/Registre">
-                    <button onClick={Registre} className="registre">Registre</button>
-                </Link>
-                <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
-                    <img className="logiusuari" src={usuari} alt="Usuari" />
-                </button>
                 </div>
             </div>
             {/* Contingut principal */}

@@ -46,13 +46,13 @@ function Pelis() {
                 <Link to="/Registre">
                     <button onClick={Registre} className="registre">Registre</button>
                 </Link>
-                    <img className='logiusuari' src={usuari}></img>
-                </div>
-            </nav>
-            </header>
+                <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
+                    <img className="logiusuari" src={usuari} alt="Usuari" />
+                </button>                
+            </div>
     
             {/* Contingut principal */}
-            <main className="content">
+           
             <h2 className='tituljocs'>Pel·lícules</h2>
             <hr></hr>
             <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -74,6 +74,7 @@ function Pelis() {
             </div>
             <p className="titulfoter">Pàgina d'oci John i Josep</p>
         </footer>
+        </div>
     </div>
     );
 };
