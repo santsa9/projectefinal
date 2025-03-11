@@ -21,8 +21,8 @@ function Registre() {
             <button onClick={handleRedirect} className='botologo'></button>
         </Link>
         <div className="tab-menu">
-          <a href="#" className={!isLogin ? "active" : ""} onClick={() => setIsLogin(false)}>Registra’t</a>
-          <a href="#" className={isLogin ? "active" : ""} onClick={() => setIsLogin(true)}>Inicia sessió</a>
+          <button className={!isLogin ? "active" : ""} onClick={() => setIsLogin(false)}>Registra’t</button>
+          <button className={isLogin ? "active" : ""} onClick={() => setIsLogin(true)}>Inicia sessió</button>
         </div>
         <p className="description">
           {isLogin ? "Ingresa les teves dades per a iniciar sessió i poder opinar." : "Ingresa les teves dades per a crear un compte i poder opinar."}

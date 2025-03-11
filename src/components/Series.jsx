@@ -1,5 +1,4 @@
 import '../App.css';
-import { useState } from 'react';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';

@@ -11,14 +11,7 @@ import Registre from './components/Registre';
 import PuntuacioPagina from './components/PuntuacioPagina';
 
 const App = () => {
-  const items = [
-    { id: 1, title: "Attack on Titan", score: 97, type: "Anime" },
-    { id: 2, title: "El Santuari", score: 89, type: "Restaurant" },
-    { id: 3, title: "Breaking Bad", score: 95, type: "Serie" },
-    { id: 4, title: "The Godfather", score: 98, type: "Pel·lícula" },
-    { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Videojoc" },
-  ];
-
+  
   return (
     <Router>
       <div className="app">
