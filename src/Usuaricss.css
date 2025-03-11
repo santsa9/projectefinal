@@ -10,7 +10,10 @@
     background: #5731a8;
     color: white;
     padding: 20px;
-    height: 72vh;
+    height: 84vh;
+    left: 0;
+    position: relative;
+    top: 5vh;
   }
   
   .sidebar h2 {
