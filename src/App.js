@@ -10,12 +10,14 @@ import Restaurants from './components/Restaurants';
 import Registre from './components/Registre';
 import PuntuacioPagina from './components/PuntuacioPagina';
 import Usuari from './components/Usuari';
+import Menu from './Menu';
 
 const App = () => {
   
   return (
     <Router>
       <div className="app">
+        <Menu/>
         <Routes>
           <Route path="/" element={<PaginaPrincipal />} />
           <Route path="/Videojocs" element={<Videojocs />} />

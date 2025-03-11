@@ -8,14 +8,14 @@ import { Link,useNavigate } from 'react-router-dom';
 function PuntuacioPagina() {
 
     const navigate = useNavigate();
-
-    const handleRedirect = () => {
-        navigate("/"); // Redirige a la página principal
-    };
-
-    const Registre = () => {
-        navigate("/Registre")
-    };
+    
+        const handleRedirect = () => {
+            navigate("/"); // Redirige a la página principal
+        };
+    
+        const Registre = () => {
+            navigate("/Registre")
+        };
 
     const VidUrl="https://youtu.be/sjxLF4IYnJc?si=xEu3PzLgB4h76uSg"
 
