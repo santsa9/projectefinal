@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Link,useNavigate } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
 
-export default function AuthForm() {
+function Registre() {
+
     const navigate = useNavigate();
 
     const handleRedirect = () => {
@@ -20,8 +21,8 @@ export default function AuthForm() {
             <button onClick={handleRedirect} className='botologo'></button>
         </Link>
         <div className="tab-menu">
-          <a href="#" className={!isLogin ? "active" : ""} onClick={() => setIsLogin(false)}>Registra’t</a>
-          <a href="#" className={isLogin ? "active" : ""} onClick={() => setIsLogin(true)}>Inicia sessió</a>
+          <button className={!isLogin ? "active" : ""} onClick={() => setIsLogin(false)}>Registra’t</button>
+          <button className={isLogin ? "active" : ""} onClick={() => setIsLogin(true)}>Inicia sessió</button>
         </div>
         <p className="description">
           {isLogin ? "Ingresa les teves dades per a iniciar sessió i poder opinar." : "Ingresa les teves dades per a crear un compte i poder opinar."}
@@ -47,4 +48,6 @@ export default function AuthForm() {
       </div>
     </div>
   );
-}
+};
+
+export default Registre;

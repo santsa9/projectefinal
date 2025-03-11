@@ -1,9 +1,9 @@
 import '../App.css';
-import { useState } from 'react';
 import joposep from '../imagenes/joj.png';
 import lupa from '../imagenes/lupa.png';
 import usuari from '../imagenes/use.png';
 import { Link,useNavigate } from 'react-router-dom';
+
 function Series() {
 
     const items = [
@@ -25,60 +25,56 @@ function Series() {
     };
     
     return (
-        <div className="app">
-            {/* Capçalera */}
-            <header className="header">
-            <nav className="nav">
+        <div className='contenidoprincipal'>
+            <div className="menu">
+                {/* Capçalera */}
+                <div className="nav">
                 <Link to="/">
                     <img className="logo" src={joposep} alt="Logo" />
                     <button onClick={handleRedirect} className='botologo'></button>
                 </Link>
-                <Link to="/videojocs">Videojocs</Link>
-                <Link to="/anime">Anime</Link>
-                <Link to="/pelis">Pel·lícules</Link>
-                <Link to="/series">Series</Link>
-                <Link to="/restaurants">Restaurants</Link>
-                <div className='fuentebusqueda'>
-                    <input className='busqueda' type="search" style={{border:'solid 2px slateblue'}}/>
-                    <img className='lupa' src={lupa}></img>
+                    <a href="/Videojocs">Videojocs</a>
+                    <a href="/Anime">Anime</a>
+                    <a href="/Pelis">Pel·lícules</a>
+                    <a href="/Series">Series</a>
+                    <a href="/Restaurants">Restaurants</a>
+                    <div className="fuentebusqueda">
+                        <input className="busqueda" type="search" style={{ border: 'solid 2px slateblue' }} />
+                        <img className="lupa" src={lupa} alt="Lupa" />
+                    </div>
+                    <div className="botoregis">
+                    <Link to="/Registre">
+                        <button onClick={Registre} className="registre">Registre</button>
+                    </Link>
+                        <img className="logiusuari" src={usuari} alt="Usuari" />
+                    </div>
                 </div>
-                <div className='botoregis'>
-                <Link to="/Registre">
-                    <button onClick={Registre} className="registre">Registre</button>
-                </Link>
-                <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
-                    <img className="logiusuari" src={usuari} alt="Usuari" />
-                </button>
-                </div>
-            </nav>
-            </header>
-    
+            </div>
             {/* Contingut principal */}
-            <main className="content">
-            <h2 className='tituljocs'>Series</h2>
-            <hr></hr>
-            <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <div className="item-list">
-                {items.map((item) => (
-                <div key={item.id} className="item">
-                    <h3>{item.title}</h3>
-                    <p>Type: {item.type}</p>
-                    <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+            <div className="content2">
+                <h2 className="titulseries">Series</h2>
+                <hr />
+                <div className="item-list">
+                    {items.map((item) => (
+                        <div key={item.id} className="item">
+                            <h3>{item.title}</h3>
+                            <p>Type: {item.type}</p>
+                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+                        </div>
+                    ))}
                 </div>
-                ))}
             </div>
-            </main>
-            <div>
-                {/* Footer */}
-                <footer className="footer">
-                <div className='movelog'>
-                    <img className='josep'src={joposep}></img>
+
+            {/* Footer */}
+            <footer className="footer">
+                <div className="movelog">
+                    <img className="josep" src={joposep} alt="Logo" />
                 </div>
-                <p className='titulfoter'>Pàgina d'oci John i Josep</p>
-                </footer>
-            </div>
+                <p className="titulfoter">Pàgina d'oci John i Josep</p>
+            </footer>
         </div>
     );
 };
+
 export default Series;
     

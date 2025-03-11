@@ -4,20 +4,14 @@ body {
   background-color: rgb(37, 39, 50);
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Cabecera */
-.header {
+.menu {
   position: fixed;
   width: 100%;
   height: 90px;
   background-color: rgb(17, 16, 35);
-  color: aliceblue;
+  z-index: 2;
 }
+
 .nav {
   position: relative;
   flex-wrap: wrap;
@@ -56,20 +50,10 @@ body {
 }
 
 /* Contenido principal */
-.content {
+.content2 {
   position: relative;
   top: 100px;
-  flex: 1;
   padding: 2rem;
-  text-align: center;
-  z-index: -1;
-}
-.zelda {
-  position: absolute;
-  display: flex;
-  left: 42px;
-  margin-top: 35px;
-  border-radius: 10px;
 }
 
 .item-list {
@@ -101,6 +85,27 @@ body {
   display: flex;
   left: 15px;
   color: aliceblue;
+}
+.paginaPunt {
+  position: absolute;
+  left: 42px;
+  margin-top: 35px;
+}
+
+.PrimerJoc {
+  position: absolute;
+  cursor: pointer;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+
+.botopuntos {
+  position: absolute;
+  width: 260px;
+  height: 180px;
+  background: none;
+  cursor: pointer;
+  border: none;
 }
 .titulanime {
   position: relative;
@@ -212,6 +217,30 @@ body {
   height: 400px;
   background-color: rgb(20, 12, 47);
 }
+.contenidopunts {
+  position: relative;
+  top: 100px;
+  height: 100vh;
+}
+.diseñopuntuacio {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.titulzelda {
+  position: relative;
+  background: #fff;
+  width: 400px;
+}
+
+.footerpuntuacio {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  top: 200px;
+  background-color: rgb(20, 12, 47);
+}
+
 .movelog {
   position: relative;
   display: flex;
