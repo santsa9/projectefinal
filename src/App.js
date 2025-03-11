@@ -8,7 +8,7 @@ import Pelis from './components/Pelis';
 import Series from './components/Series';
 import Restaurants from './components/Restaurants';
 import Registre from './components/Registre';
-import PuntuacioPagina from './components/PuntuacioPagina';
+import Usuari from './components/Usuari';
 
 const App = () => {
   
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/Series" element={<Series />} />
           <Route path="/Restaurants" element={<Restaurants />} />
           <Route path="/Registre" element={<Registre />} />
-          <Route path="/Puntuacio" element={<PuntuacioPagina />} />
+          <Route path="/Usuari" element={<Usuari />} />
         </Routes>
       </div>
     </Router>

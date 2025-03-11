@@ -46,14 +46,17 @@ function Pelis() {
                 <Link to="/Registre">
                     <button onClick={Registre} className="registre">Registre</button>
                 </Link>
+                <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
                     <img className="logiusuari" src={usuari} alt="Usuari" />
-                </div>
-            </div>
-        </div>
-        {/* Contingut principal */}
-        <div className="content2">
-            <h2 className="titulpeli">Pel·lícules</h2>
-            <hr />
+                </button>                </div>
+            </nav>
+            </header>
+    
+            {/* Contingut principal */}
+            <main className="content">
+            <h2 className='tituljocs'>Pel·lícules</h2>
+            <hr></hr>
+            <iframe className='zelda' width="17%" height="190" src="https://www.youtube.com/embed/ofH5ptn5w-A?si=QJPvNLbnkS1Kevpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div className="item-list">
                 {items.map((item) => (
                     <div key={item.id} className="item">

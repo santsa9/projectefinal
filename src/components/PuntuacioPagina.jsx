@@ -45,24 +45,9 @@ function PuntuacioPagina() {
                     </div>
                 </div>
             </div>
-            {/* Contingut principal */}
-            <div className="contenidopunts">
-                <div className='diseñopuntuacio'>
-                    <div className='paginaPunt'>
-                        <ReactPlayer
-                            url={VidUrl}
-                            playing={false}
-                            volume={0.5}
-                            width={"900px"}
-                            height={"550px"}
-                            style={{borderRadius:"20px"}}
-                            loop
-                        />
-                    </div>
-                    <div className='titulzelda'>
-                        <p>The Legend of Zelda: Breath of the Wild</p>
-                    </div>
-                </div>
+            <div className='botoregis'>
+                <button className='registre'>Registre</button>
+                <img className='logiusuari' src={usuari}></img>
             </div>
 
             {/* Footer */}
