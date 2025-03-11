@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Link,useNavigate } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
 
-export default function AuthForm() {
+function Registre() {
+
     const navigate = useNavigate();
 
     const handleRedirect = () => {
@@ -47,4 +48,6 @@ export default function AuthForm() {
       </div>
     </div>
   );
-}
+};
+
+export default Registre;
