@@ -68,7 +68,7 @@ function PuntuacioPagina() {
                         <p>The Legend of Zelda: Breath of the Wild</p>
                     </div>
                 </div>
-                <img className='logiusuari' src={usuari}></img>
+                <img className='logiusuari' src={usuari} alt='usuario registre'></img>
             </div>
 
             {/* Footer */}

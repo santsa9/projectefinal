@@ -1,6 +1,6 @@
 import '../App.css';
 import { useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
 import ReactPlayer from 'react-player'
 
@@ -15,9 +15,6 @@ function PaginaPrincipal() {
 
     const navigate = useNavigate();
 
-    const Registre = () => {
-        navigate("/Registre")
-    };
     const Puntos = () => {
         navigate("/Puntuacio");
     };
