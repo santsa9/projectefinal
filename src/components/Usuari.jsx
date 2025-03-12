@@ -43,7 +43,7 @@ const Usuari = () => {
       </header>
 
       {/* Contenidor principal amb sidebar i contingut */}
-      <div className="container">
+      <div className="containerusuari">
         <aside className="sidebar">
           <h2>El meu perfil</h2>
           <button className="sidebar-btn">Les meves valoracions</button>
