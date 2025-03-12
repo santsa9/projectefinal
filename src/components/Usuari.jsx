@@ -7,17 +7,36 @@ import usuari from "../imagenes/use.png";
 
 const categories = ["Videojocs", "Pel·lícules", "Sèries", "Anime", "Restaurants"];
 
+const Profile = () => (
+  <div>
+    <h2>El meu compte</h2>
+    <p>Correu electrònic: usuari@example.com</p>
+    <label>
+      Nova contrasenya:
+      <input type="password" placeholder="Canvia la teva contrasenya" />
+    </label>
+    <button>Actualitzar</button>
+  </div>
+);
+
+const Reviews = ({ selectedCategory }) => (
+  <div>
+    <h2>{selectedCategory}</h2>
+    <p>Contingut de {selectedCategory}</p>
+  </div>
+);
+
 const Usuari = () => {
   const [selectedCategory, setSelectedCategory] = useState("Pel·lícules");
+  const [activeSection, setActiveSection] = useState("reviews");
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate("/"); // Redirige a la página principal
+    navigate("/");
   };
 
   return (
     <div className="app">
-      {/* Capçalera */}
       <header className="header">
         <nav className="nav">
           <Link to="/">
@@ -42,28 +61,34 @@ const Usuari = () => {
         </nav>
       </header>
 
-      {/* Contenidor principal amb sidebar i contingut */}
       <div className="containerusuari">
         <aside className="sidebar">
           <h2>El meu perfil</h2>
-          <button className="sidebar-btn">Les meves valoracions</button>
-          <button className="sidebar-btn">El meu compte</button>
+          <button className="sidebar-btn" onClick={() => setActiveSection("reviews")}>Les meves valoracions</button>
+          <button className="sidebar-btn" onClick={() => setActiveSection("profile")}>El meu compte</button>
           <button className="sidebar-btn">Tancar la sessió</button>
         </aside>
 
         <main className="content">
-          <h1>Les meves valoracions</h1>
-          <nav className="tabs">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={selectedCategory === cat ? "active" : ""}
-                onClick={() => setSelectedCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </nav>
+          {activeSection === "reviews" ? (
+            <>
+              <h1>Les meves valoracions</h1>
+              <nav className="tabs">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    className={selectedCategory === cat ? "active" : ""}
+                    onClick={() => setSelectedCategory(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </nav>
+              <Reviews selectedCategory={selectedCategory} />
+            </>
+          ) : (
+            <Profile />
+          )}
         </main>
       </div>
     </div>

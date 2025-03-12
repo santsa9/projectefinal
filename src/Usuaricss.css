@@ -11,7 +11,7 @@
     background: #5731a8;
     color: white;
     padding: 20px;
-    height: 100%;
+    height: 83%;
     position: absolute;
     left: 0;
     top: 90px;
@@ -38,11 +38,10 @@
   
   .content {
     position: absolute;
-    right: 0;
     padding: 20px;
     top: 10vh;
     color: white;
-    left: 21%;
+    left: 20%;
   }
   
   .tabs {
@@ -55,6 +54,7 @@
     padding: 10px;
     border: none;
     background: #ddd;
+    border-radius: 5%;
     cursor: pointer;
   }
   
