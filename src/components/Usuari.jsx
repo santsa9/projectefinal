@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link,useNavigate } from 'react-router-dom';
-import '../Usuaricss.css';
+import { Link, useNavigate } from "react-router-dom";
+import "../Usuaricss.css";
 import joposep from "../imagenes/joj.png";
 import lupa from "../imagenes/lupa.png";
 import usuari from "../imagenes/use.png";
@@ -13,15 +13,16 @@ const Usuari = () => {
 
   const handleRedirect = () => {
     navigate("/"); // Redirige a la página principal
-};
+  };
+
   return (
     <div className="app">
       {/* Capçalera */}
       <header className="header">
         <nav className="nav">
           <Link to="/">
-                <img className="logo" src={joposep} alt="Logo" />
-                <button onClick={handleRedirect} className='botologo'></button>
+            <img className="logo" src={joposep} alt="Logo" />
+            <button onClick={handleRedirect} className="botologo"></button>
           </Link>
           <a href="/Videojocs">Videojocs</a>
           <a href="/Anime">Anime</a>
@@ -34,14 +35,14 @@ const Usuari = () => {
           </div>
           <div className="botoregis">
             <button onClick={() => navigate("/Registre")} className="registre">Registre</button>
-            <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
+            <button className="usuari-btn" onClick={() => navigate("/Usuari")}> 
               <img className="logiusuari" src={usuari} alt="Usuari" />
             </button>
           </div>
         </nav>
       </header>
 
-      {/* Contingut Principal */}
+      {/* Contenidor principal amb sidebar i contingut */}
       <div className="container">
         <aside className="sidebar">
           <h2>El meu perfil</h2>
