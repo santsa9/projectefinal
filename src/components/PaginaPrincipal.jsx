@@ -2,8 +2,6 @@ import '../App.css';
 import { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
-import lupa from '../imagenes/lupa.png';
-import usuari from '../imagenes/use.png';
 import ReactPlayer from 'react-player'
 
 function PaginaPrincipal() {
@@ -16,10 +14,6 @@ function PaginaPrincipal() {
     ];
 
     const navigate = useNavigate();
-
-    const handleRedirect = () => {
-        navigate("/"); // Redirige a la página principal
-    };
 
     const Registre = () => {
         navigate("/Registre")
