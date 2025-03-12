@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, useNavigate, Link } from 'react-router-dom';
+import {useNavigate, Link } from 'react-router-dom';
 import joposep from './imagenes/joj.png';
 import lupa from './imagenes/lupa.png';
 import usuari from './imagenes/use.png';
+
 const Menu = () => {
+
     const navigate = useNavigate();
 
     const handleRedirect = () => {
@@ -22,9 +24,6 @@ const Menu = () => {
             <img className="logo" src={joposep} alt="Logo" />
             <button onClick={handleRedirect} className='botologo'></button>
         </Link>
-        <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
-            <img className="logiusuari" src={usuari} alt="Usuari" />
-        </button>
             <a href="/Videojocs">Videojocs</a>
             <a href="/Anime">Anime</a>
             <a href="/Pelis">Pel·lícules</a>
@@ -38,7 +37,9 @@ const Menu = () => {
             <Link to="/Registre">
                 <button onClick={Registre} className="registre">Registre</button>
             </Link>
+            <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
                 <img className="logiusuari" src={usuari} alt="Usuari" />
+            </button>
             </div>
         </div>
     </div>

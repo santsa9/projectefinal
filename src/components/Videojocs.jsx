@@ -1,8 +1,6 @@
 import '../App.css';
 import joposep from '../imagenes/joj.png';
-import lupa from '../imagenes/lupa.png';
-import usuari from '../imagenes/use.png';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Videojocs() {
 
@@ -15,14 +13,6 @@ function Videojocs() {
     ];
     
     const navigate = useNavigate();
-
-    const handleRedirect = () => {
-        navigate("/"); // Redirige a la página principal
-    };
-
-    const Registre = () => {
-        navigate("/Registre")
-    };
     
     const Puntos = () => {
         navigate("/Puntuacio");

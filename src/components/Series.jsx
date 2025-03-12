@@ -1,8 +1,6 @@
 import '../App.css';
 import joposep from '../imagenes/joj.png';
-import lupa from '../imagenes/lupa.png';
-import usuari from '../imagenes/use.png';
-import { Link,useNavigate } from 'react-router-dom';
+import { } from 'react-router-dom';
 
 function Series() {
 
@@ -13,44 +11,9 @@ function Series() {
         { id: 4, title: "The Godfather", score: 98, type: "TV Show" },
         { id: 5, title: "The Handmaid tale", score: 96, type: "TV Show" },
         ];
-        
-    const navigate = useNavigate();
-
-    const handleRedirect = () => {
-        navigate("/"); // Redirige a la página principal
-    };
-
-    const Registre = () => {
-        navigate("/Registre")
-    };
     
     return (
         <div className='contenidoprincipal'>
-            <div className="menu">
-                {/* Capçalera */}
-                <div className="nav">
-                <Link to="/">
-                    <img className="logo" src={joposep} alt="Logo" />
-                    <button onClick={handleRedirect} className='botologo'></button>
-                </Link>
-                <Link to="/videojocs">Videojocs</Link>
-                <Link to="/anime">Anime</Link>
-                <Link to="/pelis">Pel·lícules</Link>
-                <Link to="/series">Series</Link>
-                <Link to="/restaurants">Restaurants</Link>
-                <div className='fuentebusqueda'>
-                    <input className='busqueda' type="search" style={{border:'solid 2px slateblue'}}/>
-                    <img className='lupa' src={lupa}></img>
-                </div>
-                <div className='botoregis'>
-                <Link to="/Registre">
-                    <button onClick={Registre} className="registre">Registre</button>
-                </Link>
-                <button className="usuari-btn" onClick={() => navigate("/Usuari")}>
-                    <img className="logiusuari" src={usuari} alt="Usuari" />
-                </button>
-                </div>
-            </div>
             {/* Contingut principal */}
             <div className="content2">
                 <h2 className="titulseries">Series</h2>
@@ -73,7 +36,6 @@ function Series() {
                 </div>
                 <p className="titulfoter">Pàgina d'oci John i Josep</p>
             </footer>
-            </div>
         </div>
     );
 };
