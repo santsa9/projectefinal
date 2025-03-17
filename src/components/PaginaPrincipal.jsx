@@ -40,7 +40,7 @@ function PaginaPrincipal() {
                             url={VidUrl}
                             playing={isPlaying}
                             volume={0.5}
-                            width={260}
+                            width={245}
                             height={180}
                             style={{borderRadius:"20px"}}
                             loop

@@ -1,15 +1,9 @@
 import '../App.css';
 import React, { useState } from "react";
-import { Link,useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
 
 function Registre() {
-
-    const navigate = useNavigate();
-
-    const handleRedirect = () => {
-        navigate("/"); // Redirige a la página principal
-    };
 
   const [isLogin, setIsLogin] = useState(false);
 
@@ -18,7 +12,6 @@ function Registre() {
       <div className="form-box">
         <Link to="/">
             <img className="logo_registre" src={joposep} alt="Logo" />
-            <button onClick={handleRedirect} className='botologo'></button>
         </Link>
         <div className="tab-menu">
           <button className={!isLogin ? "active" : ""} onClick={() => setIsLogin(false)}>Registra’t</button>
