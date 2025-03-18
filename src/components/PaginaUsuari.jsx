@@ -61,7 +61,7 @@ const Usuari = () => {
               <div key={index} className="rating-card">
                 <h3>{item.title}</h3>
                 <p><strong>Data:</strong> {item.date}</p>
-                <p><strong>Valoració:</strong> {item.rating} ⭐</p>
+                <p><strong>Valoració:</strong> {item.rating} </p>
                 <p>{item.comment}</p>
               </div>
             ))
