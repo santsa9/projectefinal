@@ -1,106 +1,67 @@
 import '../App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import joposep from '../imagenes/joj.png';
-import ReactPlayer from 'react-player'
 
 function PaginaPrincipal() {
-    const items = [
-        { id: 1, title: "The Legend of Zelda: Breath of the Wild", score: 97, type: "Game" },
-        { id: 2, title: "The Last of Us Part II", score: 93, type: "Game" },
-        { id: 3, title: "Breaking Bad", score: 95, type: "TV Show" },
-        { id: 4, title: "The Godfather", score: 98, type: "Movie" },
-        { id: 5, title: "Red Dead Redemption 2", score: 96, type: "Game" },
-    ];
-
+    const API_KEY = "d1cc6da1767d3eb31de916841bb25fb4";
     const navigate = useNavigate();
-
-    const Puntos = () => {
-        navigate("/Puntuacio");
-    };
     
-    const VidUrl="https://youtu.be/sjxLF4IYnJc?si=xEu3PzLgB4h76uSg"
+    const [movies, setMovies] = useState([]);
+    const [tvShows, setTvShows] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
-    const [isPlaying, setIsPlaying] = useState(false);
+    const fetchMovies = async () => {
+        try {
+            const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ca-ES&page=1`);
+            const data = await res.json();
+            setMovies(data.results);
+        } catch (error) {
+            console.error("Error carregant les pel·lícules:", error);
+        }
+    };
+
+    const fetchTVShows = async () => {
+        try {
+            const res = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=ca-ES&page=1`);
+            const data = await res.json();
+            setTvShows(data.results);
+        } catch (error) {
+            console.error("Error carregant les sèries:", error);
+        }
+    };
+
+    useEffect(() => {
+        Promise.all([fetchMovies(), fetchTVShows()]).then(() => setIsLoading(false));
+    }, []);
+
+    if (isLoading) {
+        return <h2>Carregant dades...</h2>;
+    }
 
     return (
         <div className='contenidoprincipal'>
-            
-            {/* Contingut principal */}
             <div className="content2">
-                <h2 className="tituljocs">Videojocs</h2>
+                <h2 className="titulpeli">Pel·lícules Populars</h2>
                 <hr />
-                <div className='paginaPunt'>
-                    <div className='PrimerJoc'
-                        onMouseEnter={() => setIsPlaying(true)} 
-                        onMouseLeave={() => setIsPlaying(false)}
-                    >
-                        <button onClick={Puntos} className="botopuntos"></button>
-                        <ReactPlayer
-                            url={VidUrl}
-                            playing={isPlaying}
-                            volume={0.5}
-                            width={260}
-                            height={180}
-                            style={{borderRadius:"20px"}}
-                            loop
-                        />
-                    </div>
-                </div>
                 <div className="item-list">
-                    {items.map((item) => (
-                        <div key={item.id} className="item">
-                            <h3>{item.title}</h3>
-                            <p>Type: {item.type}</p>
-                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+                    {movies.map((movie) => (
+                        <div key={movie.id} className="item">
+                            <h3>{movie.title}</h3>
+                            <img className="poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                            <p>Valoració: {movie.vote_average}</p>
                         </div>
                     ))}
                 </div>
 
-                <h2 className="titulanime">Anime</h2>
+                <h2 className="titulseries">Sèries Populars</h2>
                 <hr />
                 <div className="item-list">
-                    {items.map((item) => (
-                        <div key={item.id} className="item">
-                            <h3>{item.title}</h3>
-                            <p>Type: {item.type}</p>
-                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
-                        </div>
-                    ))}
-                </div>
-
-                <h2 className="titulpeli">Pelis</h2>
-                <hr />
-                <div className="item-list">
-                    {items.map((item) => (
-                        <div key={item.id} className="item">
-                            <h3>{item.title}</h3>
-                            <p>Type: {item.type}</p>
-                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
-                        </div>
-                    ))}
-                </div>
-
-                <h2 className="titulseries">Series</h2>
-                <hr />
-                <div className="item-list">
-                    {items.map((item) => (
-                        <div key={item.id} className="item">
-                            <h3>{item.title}</h3>
-                            <p>Type: {item.type}</p>
-                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
-                        </div>
-                    ))}
-                </div>
-
-                <h2 className="titulrestaurants">Restaurants</h2>
-                <hr />
-                <div className="item-list">
-                    {items.map((item) => (
-                        <div key={item.id} className="item">
-                            <h3>{item.title}</h3>
-                            <p>Type: {item.type}</p>
-                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+                    {tvShows.map((show) => (
+                        <div key={show.id} className="item">
+                            <h3>{show.name}</h3>
+                            <img className="poster" src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} />
+                            <p>Valoració: {show.vote_average}</p>
                         </div>
                     ))}
                 </div>
@@ -115,6 +76,6 @@ function PaginaPrincipal() {
             </footer>
         </div>
     );
-};
+}
 
 export default PaginaPrincipal;
