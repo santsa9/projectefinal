@@ -1,6 +1,7 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Slider from "react-slick";
 import joposep from '../imagenes/joj.png';
 
 function PaginaPrincipal() {
@@ -39,41 +40,46 @@ function PaginaPrincipal() {
         return <h2>Carregant dades...</h2>;
     }
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
     return (
         <div className='contenidoprincipal'>
             <div className="content2">
-                <h2 className="tituljocs">Videojocs</h2>
+                <h2 className="titulpeli">Pel·lícules Populars</h2>
                 <hr />
-                <div className='paginaPunt'>
-                    <div className='PrimerJoc'
-                        onMouseEnter={() => setIsPlaying(true)} 
-                        onMouseLeave={() => setIsPlaying(false)}
-                    >
-                        <button onClick={Puntos} className="botopuntos"></button>
-                        <ReactPlayer
-                            url={VidUrl}
-                            playing={isPlaying}
-                            volume={0.5}
-                            width={245}
-                            height={180}
-                            style={{borderRadius:"20px"}}
-                            loop
-                        />
-                    </div>
-                </div>
-                <div className="item-list">
-                    {items.map((item) => (
-                        <div key={item.id} className="item">
-                            <h3>{item.title}</h3>
-                            <p>Type: {item.type}</p>
-                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
-                        </div>
-                    ))}
-                </div>
-
-                <h2 className="titulanime">Anime</h2>
-                <hr />
-                <div className="item-list">
+                <Slider {...settings}>
                     {movies.map((movie) => (
                         <div key={movie.id} className="item">
                             <h3>{movie.title}</h3>
@@ -81,11 +87,11 @@ function PaginaPrincipal() {
                             <p>Valoració: {movie.vote_average}</p>
                         </div>
                     ))}
-                </div>
-
+                </Slider>
+    
                 <h2 className="titulseries">Sèries Populars</h2>
                 <hr />
-                <div className="item-list">
+                <Slider {...settings}>
                     {tvShows.map((show) => (
                         <div key={show.id} className="item">
                             <h3>{show.name}</h3>
@@ -93,9 +99,9 @@ function PaginaPrincipal() {
                             <p>Valoració: {show.vote_average}</p>
                         </div>
                     ))}
-                </div>
+                </Slider>
             </div>
-
+    
             {/* Footer */}
             <footer className="footer">
                 <div className="movelog">

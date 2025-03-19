@@ -1,7 +1,14 @@
-body {
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+html, body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: rgb(37, 39, 50);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu {
@@ -48,6 +55,40 @@ body {
 }
 
 /* Contenido principal */
+/* Contenido principal */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el nombre de columnes automàticament */
+  gap: 20px; /* Espai entre els elements */
+  margin: 20px 0;
+}
+
+.item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Assegura que l'alçada de l'element sigui consistent */
+}
+
+.item img {
+  max-width: 100%; /* Assegura que les imatges no desbordin */
+  border-radius: 4px;
+}
+
+.poster {
+  width: 100%; /* Ajusta la imatge al div */
+  height: auto; /* Manté la proporció */
+  max-height: 300px; /* Evita que sigui massa alta */
+  border-radius: 10px;
+  object-fit: cover; /* Assegura que la imatge no es distorsioni */
+}
+
 .content2 {
   position: relative;
   top: 100px;
@@ -208,12 +249,19 @@ body {
 
 /* Pie de página */
 .footer {
-  position: relative;
-  top: 200px;
-  width: 100%;
-  height: 400px;
-  background-color: rgb(20, 12, 47);
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; /* Assegura que el footer es col·loqui al final */
 }
+
+.contenidoprincipal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .contenidopunts {
   position: relative;
   top: 120px;
