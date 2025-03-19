@@ -10,6 +10,7 @@ import Restaurants from './components/Restaurants';
 import Registre from './components/Registre';
 import PuntuacioPagina from './components/PuntuacioPagina';
 import Usuari from './components/Usuari';
+import PaginaUsuari from './components/PaginaUsuari';
 import Menu from './Menu';
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/Registre" element={<Registre />} />
           <Route path="/Usuari" element={<Usuari />} />
           <Route path="/Puntuacio" element={<PuntuacioPagina />} />
+          <Route path="/PaginaUsuari" element={<PaginaUsuari />} />
         </Routes>
       </div>
     </Router>

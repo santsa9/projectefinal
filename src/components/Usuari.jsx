@@ -7,6 +7,29 @@ import usuari from "../imagenes/use.png";
 
 const categories = ["Videojocs", "Pel·lícules", "Sèries", "Anime", "Restaurants"];
 
+const reviewData = {
+  "Videojocs": [
+    { id: 1, title: "The Legend of Zelda", date: "2024-03-10", rating: 4.8, image: "zelda.jpg" },
+    { id: 2, title: "Elden Ring", date: "2023-02-25", rating: 4.9, image: "eldenring.jpg" }
+  ],
+  "Pel·lícules": [
+    { id: 1, title: "Inception", date: "2010-07-16", rating: 4.7, image: "inception.jpg" },
+    { id: 2, title: "Interstellar", date: "2014-11-07", rating: 4.8, image: "interstellar.jpg" }
+  ],
+  "Sèries": [
+    { id: 1, title: "Breaking Bad", date: "2008-01-20", rating: 4.9, image: "breakingbad.jpg" },
+    { id: 2, title: "Game of Thrones", date: "2011-04-17", rating: 4.5, image: "got.jpg" }
+  ],
+  "Anime": [
+    { id: 1, title: "Attack on Titan", date: "2013-04-06", rating: 4.9, image: "aot.jpg" },
+    { id: 2, title: "Death Note", date: "2006-10-03", rating: 4.8, image: "deathnote.jpg" }
+  ],
+  "Restaurants": [
+    { id: 1, title: "El Celler de Can Roca", date: "2024-02-01", rating: 5.0, image: "canroca.jpg" },
+    { id: 2, title: "Disfrutar", date: "2023-12-15", rating: 4.9, image: "disfrutar.jpg" }
+  ]
+};
+
 const Profile = () => (
   <div>
     <h2>El meu compte</h2>
@@ -19,12 +42,27 @@ const Profile = () => (
   </div>
 );
 
-const Reviews = ({ selectedCategory }) => (
-  <div>
-    <h2>{selectedCategory}</h2>
-    <p>Contingut de {selectedCategory}</p>
-  </div>
-);
+const Reviews = ({ selectedCategory }) => {
+  const reviews = reviewData[selectedCategory] || [];
+
+  return (
+    <div>
+      <h2>{selectedCategory}</h2>
+      <div className="review-list">
+        {reviews.map(review => (
+          <div key={review.id} className="review-card">
+            <img src={`../imagenes/${review.image}`} alt={review.title} className="review-image" />
+            <div className="review-info">
+              <h3>{review.title}</h3>
+              <p>Data: {review.date}</p>
+              <p>Valoració: ⭐ {review.rating}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Usuari = () => {
   const [selectedCategory, setSelectedCategory] = useState("Pel·lícules");

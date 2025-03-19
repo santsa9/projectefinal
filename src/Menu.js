@@ -20,10 +20,12 @@ const Menu = () => {
     <div className="menu">
         {/* Capçalera */}
         <div className="nav">
-        <Link to="/">
-            <img className="logo" src={joposep} alt="Logo" />
-            <button onClick={handleRedirect} className='botologo'></button>
-        </Link>
+            <div className='oclick'>
+                <Link to="/">
+                    <img className="josep" src={joposep} alt="Logo" />
+                    <button onClick={handleRedirect} className='botologo'></button>
+                </Link>
+            </div>
             <a href="/Videojocs">Videojocs</a>
             <a href="/Anime">Anime</a>
             <a href="/Pelis">Pel·lícules</a>

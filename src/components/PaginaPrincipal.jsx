@@ -42,7 +42,36 @@ function PaginaPrincipal() {
     return (
         <div className='contenidoprincipal'>
             <div className="content2">
-                <h2 className="titulpeli">Pel·lícules Populars</h2>
+                <h2 className="tituljocs">Videojocs</h2>
+                <hr />
+                <div className='paginaPunt'>
+                    <div className='PrimerJoc'
+                        onMouseEnter={() => setIsPlaying(true)} 
+                        onMouseLeave={() => setIsPlaying(false)}
+                    >
+                        <button onClick={Puntos} className="botopuntos"></button>
+                        <ReactPlayer
+                            url={VidUrl}
+                            playing={isPlaying}
+                            volume={0.5}
+                            width={245}
+                            height={180}
+                            style={{borderRadius:"20px"}}
+                            loop
+                        />
+                    </div>
+                </div>
+                <div className="item-list">
+                    {items.map((item) => (
+                        <div key={item.id} className="item">
+                            <h3>{item.title}</h3>
+                            <p>Type: {item.type}</p>
+                            <div className={`score ${item.score >= 90 ? "high" : "low"}`}>{item.score}</div>
+                        </div>
+                    ))}
+                </div>
+
+                <h2 className="titulanime">Anime</h2>
                 <hr />
                 <div className="item-list">
                     {movies.map((movie) => (
