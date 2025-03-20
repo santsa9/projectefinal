@@ -55,7 +55,6 @@ html, body {
 }
 
 /* Contenido principal */
-/* Contenido principal */
 .item-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el nombre de columnes automàticament */
@@ -78,7 +77,7 @@ html, body {
 
 .item img {
   max-width: 100%; /* Assegura que les imatges no desbordin */
-  border-radius: 4px;
+  border-radius: 15px;
 }
 
 .poster {
@@ -86,9 +85,10 @@ html, body {
   height: auto; /* Manté la proporció */
   max-height: 300px; /* Evita que sigui massa alta */
   border-radius: 10px;
-  object-fit: cover; /* Assegura que la imatge no es distorsioni */
+  object-fit: contain; /* Assegura que la imatge no es distorsioni i es mostri completament */
+  margin: 0 auto; /* Centra la imatge horitzontalment */
+  border-radius: 15px;
 }
-
 .content2 {
   position: relative;
   top: 100px;

@@ -18,7 +18,7 @@ function PaginaPrincipal() {
             const data = await res.json();
             setMovies(data.results);
         } catch (error) {
-            console.error("Error carregant les pel·lícules:", error);
+            console.error("Error cargando las películas:", error);
         }
     };
 
@@ -28,7 +28,7 @@ function PaginaPrincipal() {
             const data = await res.json();
             setTvShows(data.results);
         } catch (error) {
-            console.error("Error carregant les sèries:", error);
+            console.error("Error cargando las series:", error);
         }
     };
 
@@ -37,7 +37,7 @@ function PaginaPrincipal() {
     }, []);
 
     if (isLoading) {
-        return <h2>Carregant dades...</h2>;
+        return <h2>Cargando datos...</h2>;
     }
 
     const settings = {
