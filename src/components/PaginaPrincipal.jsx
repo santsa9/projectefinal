@@ -79,27 +79,31 @@ function PaginaPrincipal() {
             <div className="content2">
                 <h2 className="titulpeli">Pel·lícules Populars</h2>
                 <hr />
-                <Slider {...settings}>
-                    {movies.map((movie) => (
-                        <div key={movie.id} className="item">
-                            <h3>{movie.title}</h3>
-                            <img className="poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                            <p>Valoració: {movie.vote_average}</p>
-                        </div>
-                    ))}
-                </Slider>
+                <div className='contentpelis'>
+                    <Slider {...settings}>
+                        {movies.map((movie) => (
+                            <div key={movie.id} className="item">
+                                <h3>{movie.title}</h3>
+                                <img className="poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                                <p>Valoració: {movie.vote_average}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
     
                 <h2 className="titulseries">Sèries Populars</h2>
                 <hr />
-                <Slider {...settings}>
-                    {tvShows.map((show) => (
-                        <div key={show.id} className="item">
-                            <h3>{show.name}</h3>
-                            <img className="poster" src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} />
-                            <p>Valoració: {show.vote_average}</p>
-                        </div>
-                    ))}
-                </Slider>
+                <div className='contentseries'>
+                    <Slider {...settings}>
+                        {tvShows.map((show) => (
+                            <div key={show.id} className="item">
+                                <h3>{show.name}</h3>
+                                <img className="poster" src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} />
+                                <p>Valoració: {show.vote_average}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
             </div>
     
             {/* Footer */}
