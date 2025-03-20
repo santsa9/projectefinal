@@ -247,13 +247,23 @@ html, body {
   background-color: indigo;
 }
 
+.contentpelis {
+  position: relative;
+  height: auto;
+}
+.contentseries {
+  position: relative;
+  height: auto;
+
+}
+
 /* Pie de página */
 .footer {
+  position: relative;
   background-color: #333;
   color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: auto; /* Assegura que el footer es col·loqui al final */
+  height: 300px;
+  margin-top: 200px;
 }
 
 .contenidoprincipal {
