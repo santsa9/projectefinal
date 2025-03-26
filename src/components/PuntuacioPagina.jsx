@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import joposep from '../imagenes/joj.png';
 import swit from '../imagenes/switch.png';
 import zelda from '../imagenes/logozelda.png';
+import monki from '../imagenes/moniloco.gif';
 import { } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -49,6 +50,7 @@ function PuntuacioPagina() {
                         <div className='modtext'>
                             <p className='metascore'>PUNTUACIO</p>
                             <p className='favorable'>Molt Favorable</p>
+                            <p className='numberr'>Puntuaciò 97% Favorables</p>
                             <div className='numeropunt'><p className='calificaionum'>97</p></div>
                             <div className='valorgood'>
                                 <div className='green'></div>
@@ -73,7 +75,40 @@ function PuntuacioPagina() {
                 </div>
                 <div className='comentarismenu'>
                     <div className='alicomentaris'>
-                        COMENTARIS
+                        <p className='comentariscritics'>CRITICAS USUARIS</p>
+                        <hr style={{width:"100%"}}></hr>
+                        <div className='criticsrall'>
+                            <p className='metascore'>PUNTUACIO</p>
+                            <p className='favorable'>Molt Favorable</p>
+                            <p className='numberr'>Puntuaciò 97% Favorables</p>
+                            <div className='cantitatpunt'>
+                                <div className='numeropunt2'><p className='calificaionum2'>97</p>
+                                    <div className='colorespunt'>
+                                        <div className='green'></div>
+                                        <div className='orange'></div>
+                                        <div className='red'></div>
+                                    </div>
+                                    <div className='declaracionspunt'>
+                                        <div><p>97% Positive</p></div>
+                                        <div><hr style={{position:"relative",height:"40px",top:"12px"}}></hr></div>
+                                        <div><p>3% Regulares</p></div>
+                                        <div><hr style={{position:"relative",height:"40px",top:"12px"}}></hr></div>
+                                        <div><p>0% Negatius</p></div>
+                                    </div>
+                                    <div className='declaracionspunt2'>
+                                        <div><p>345 Reviews</p></div>
+                                        <div><p>1 Reviews</p></div>
+                                        <div><p>0 Reviews</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr></hr>
+                        <div className='llistareviews'>
+                            <div><a style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px"}} href="/Puntuacio">Positive Reviews</a></div>
+                            <div><a style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px",marginLeft:"50px"}} href="/Puntuacio">Regulars Reviews</a></div>
+                            <div><a style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px",marginLeft:"50px"}} href="/Puntuacio">Negatius Reviews</a></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,6 +120,9 @@ function PuntuacioPagina() {
                 </div>
                 <p className="titulfoter">Pàgina d'oci John i Josep</p>
             </footer>
+            <div className='monki'>
+                <img className='mono' src={monki} alt='monki traviezo' ></img>
+            </div>
         </div>
     );
 };

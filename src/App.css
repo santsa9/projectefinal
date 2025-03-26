@@ -304,6 +304,12 @@ body {
   position: relative;
   opacity: 0.4;
 }
+.criticsrall {
+  position: relative;
+}
+.cantitatpunt {
+  position: relative;
+}
 .metascore {
   position: relative;
   font-size: 1rem;
@@ -313,18 +319,44 @@ body {
   z-index: 3;
   opacity: 0.8;
   font-weight: initial;
+  color: white;
 }
+.numberr {
+  opacity: 0.8;
+  color: white;
+  font-family: monospace;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
 .favorable {
   position: relative;
   font-family: cursive;
   margin-top: -5px;
   z-index: 2;
+  color: white;
 }
 .numeropunt {
   position: relative;
   display: flex;
   justify-content: flex-end ;
   margin-top: -105px;
+}
+.numeropunt2 {
+  position: relative;
+  display: flex;
+  left: 38%;
+  margin-top: -130px;
+  width: 560px;
+}
+
+.colorespunt {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-left: 30px;
+  margin-top: 40px;
 }
 .calificaionum {
   position: relative;
@@ -338,7 +370,57 @@ body {
   border: solid 2px white;
   font-family: cursive;
   font-size: 25px;
+  color: white;
 }
+.calificaionum2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 85px;
+  background: #00ce7a;
+  border-radius: 7px;
+  border: solid 2px white;
+  font-family: cursive;
+  font-size: 25px;
+  color: white;
+}
+.declaracionspunt {
+  position: absolute;
+  display: flex;
+  width: auto;
+  height: 120px;
+  top: 15px;
+  right: 0;
+  left: 115px;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  box-sizing: border-box;
+  font-size: 13.2px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.declaracionspunt2 {
+  position: absolute;
+  display: flex;
+  width: 445px;
+  top: 77px;
+  left: 112px;
+  color: white;
+  font-size: 12.5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+  justify-content: space-around;
+  align-items: center;
+}
+.llistareviews {
+  position: relative;
+  display: flex;
+  top: 15px;
+}
+
 .valorgood {
   position: relative;
   width: 100%;
@@ -353,13 +435,19 @@ body {
   border-bottom-left-radius: 10px;
 }
 .orange {
+  position: relative;
+  margin-left: 5px;
   background: #ffbd3f;
   flex: 0.3;
   height: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .red {
+  position: relative;
+  margin-left: 5px;
   background: #ff6874;
-  flex: 0.1;
+  flex: 0;
   height: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -383,13 +471,23 @@ body {
 .comentarismenu {
   position: relative;
   top: 30px;
-  width: 918px;
+  width: 900px;
   height: 100vh;
+  left: 15px;
 }
 
 .alicomentaris {
   position: absolute;
   display: block;
+  width: 100%;
+}
+.comentariscritics {
+  position: relative;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  font-family: inherit;
+  font-weight: bold;
+  color: white;
 }
 
 .contenidoregistre {
@@ -502,4 +600,18 @@ body {
 
 .submit-btn:hover {
   background: #555;
+}
+
+.monki {
+  position: relative;
+  top: 300px;
+  width: 100%;
+  height: 600px;
+}
+
+.mono {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 25;
 }
