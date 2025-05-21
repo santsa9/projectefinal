@@ -77,7 +77,7 @@ html, body {
 
 .item img {
   max-width: 100%; /* Assegura que les imatges no desbordin */
-  border-radius: 15px;
+  border-radius: 4px;
 }
 
 .poster {
@@ -87,12 +87,12 @@ html, body {
   border-radius: 10px;
   object-fit: contain; /* Assegura que la imatge no es distorsioni i es mostri completament */
   margin: 0 auto; /* Centra la imatge horitzontalment */
-  border-radius: 15px;
 }
 .content2 {
   position: relative;
   top: 100px;
   padding: 2rem;
+  height: 100%;
 }
 
 .item-list {
@@ -262,7 +262,7 @@ html, body {
   position: relative;
   background-color: #333;
   color: white;
-  height: 300px;
+  height: 200px;
   margin-top: 200px;
 }
 
