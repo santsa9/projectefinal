@@ -21,6 +21,20 @@ function PuntuacioPagina() {
         }
     };
 
+    const [tipoComentario, setTipoComentario] = useState(null);
+
+    const comentarios = [
+        { texto: "¡Increíble juego, me encantó!", tipo: "positivo" },
+        { texto: "Está bien, pero esperaba más.", tipo: "regular" },
+        { texto: "No lo recomiendo, muy aburrido.", tipo: "negativo" },
+        { texto: "Gráficos espectaculares y buena jugabilidad.", tipo: "positivo" },
+        { texto: "Historia confusa, pero pasable.", tipo: "regular" },
+    ];
+
+    const comentariosFiltrados = tipoComentario 
+        ? comentarios.filter(c => c.tipo === tipoComentario) 
+        : [];
+
     return (
         <div className='contenidoprincipalpuntuacio'>
             {/* Contingut principal */}
@@ -105,9 +119,18 @@ function PuntuacioPagina() {
                         </div>
                         <hr></hr>
                         <div className='llistareviews'>
-                            <div><a style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px"}} href="/Puntuacio">Positive Reviews</a></div>
-                            <div><a style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px",marginLeft:"50px"}} href="/Puntuacio">Regulars Reviews</a></div>
-                            <div><a style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px",marginLeft:"50px"}} href="/Puntuacio">Negatius Reviews</a></div>
+                            <div className='botonescoment'>
+                                <div className='posi' style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px" ,cursor: "pointer"}} onClick={() => setTipoComentario("positivo")} >Positive Reviews</div>
+                                <div className='reg' style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px",marginLeft:"50px" ,cursor: "pointer"}} onClick={() => setTipoComentario("regular")} >Regulars Reviews</div>
+                                <div className='nega' style={{color:"white",textDecoration:"none",fontFamily:"monospace", fontSize:"15px",marginLeft:"50px" ,cursor: "pointer"}} onClick={() => setTipoComentario("negativo")} >Negative Reviews</div> 
+                            </div>
+                            <div className="comentarioscontainer" style={{position: "absolute",top: "50px"}}>
+                                {comentariosFiltrados.map((comentario, index) => (
+                                    <div key={index} className={`comentario ${comentario.tipo}`}>
+                                    <p className="comentario-texto">"{comentario.texto}"</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
