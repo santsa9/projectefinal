@@ -57,6 +57,7 @@ html, body {
 /* Contenido principal */
 /* Contenido principal */
 .item-list {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el nombre de columnes automàticament */
   gap: 20px; /* Espai entre els elements */
@@ -64,6 +65,7 @@ html, body {
 }
 
 .item {
+  position: relative;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -77,6 +79,7 @@ html, body {
 }
 
 .item img {
+  min-height: 100%;
   max-width: 100%; /* Assegura que les imatges no desbordin */
   border-radius: 4px;
 }

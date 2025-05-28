@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import joposep from '../imagenes/joj.png';
+import Anime from './Anime';
 
 function PaginaPrincipal() {
     const API_KEY = "d1cc6da1767d3eb31de916841bb25fb4";
@@ -10,6 +11,7 @@ function PaginaPrincipal() {
     
     const [movies, setMovies] = useState([]);
     const [tvShows, setTvShows] = useState([]);
+    const [tvAnime, setTvAnime] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const fetchMovies = async () => {
@@ -32,8 +34,18 @@ function PaginaPrincipal() {
         }
     };
 
+    const fetchTVAnime = async () => {
+        try {
+            const res = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=ca-ES&page=1`);
+            const data = await res.json();
+            setTvAnime(data.results);
+        } catch (error) {
+            console.error("Error carregant les Animes:", error);
+        }
+    };
+
     useEffect(() => {
-        Promise.all([fetchMovies(), fetchTVShows()]).then(() => setIsLoading(false));
+        Promise.all([fetchMovies(), fetchTVShows(), fetchTVAnime()]).then(() => setIsLoading(false));
     }, []);
 
     if (isLoading) {
@@ -100,6 +112,32 @@ function PaginaPrincipal() {
                                 <h3>{show.name}</h3>
                                 <img className="poster" src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} />
                                 <p>Valoració: {show.vote_average}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+                <h2 className="titulseries">Animes Populars</h2>
+                <hr />
+                <div className='contentanime'>
+                    <Slider {...settings}>
+                        {tvAnime.map((anime) => (
+                            <div key={anime.id} className="item">
+                                <h3>{anime.name}</h3>
+                                <img className="poster" src={`https://image.tmdb.org/t/p/w500${anime.poster_path}`} alt={anime.name} />
+                                <p>Valoració: {anime.vote_average}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+                <h2 className="titulseries">Videojocs Populars</h2>
+                <hr />
+                <div className='contentvideojocs'>
+                    <Slider {...settings}>
+                        {tvAnime.map((anime) => (
+                            <div key={anime.id} className="item">
+                                <h3>{anime.name}</h3>
+                                <img className="poster" src={`https://image.tmdb.org/t/p/w500${anime.poster_path}`} alt={anime.name} />
+                                <p>Valoració: {anime.vote_average}</p>
                             </div>
                         ))}
                     </Slider>
