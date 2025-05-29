@@ -735,3 +735,11 @@ html, body {
 .comentario-texto {
   margin: 0;
 }
+
+.poster {
+  position: relative;
+  width: 300px;       /* Ancho fijo */
+  height: 300px;      /* Alto fijo */
+  object-fit: cover;  /* Recorta la imagen para cubrir el espacio sin deformarla */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+}

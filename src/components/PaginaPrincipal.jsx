@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import joposep from '../imagenes/joj.png';
-import Anime from './Anime';
 
 function PaginaPrincipal() {
     const API_KEY = "d1cc6da1767d3eb31de916841bb25fb4";
@@ -12,6 +11,7 @@ function PaginaPrincipal() {
     const [movies, setMovies] = useState([]);
     const [tvShows, setTvShows] = useState([]);
     const [tvAnime, setTvAnime] = useState([]);
+    const [tvVideojocs, setVideojocs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const fetchMovies = async () => {
@@ -36,7 +36,7 @@ function PaginaPrincipal() {
 
     const fetchTVAnime = async () => {
         try {
-            const res = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=ca-ES&page=1`);
+            const res = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_keywords=210024|210025&language=ca-ES&page=1`);
             const data = await res.json();
             setTvAnime(data.results);
         } catch (error) {
@@ -45,7 +45,21 @@ function PaginaPrincipal() {
     };
 
     useEffect(() => {
-        Promise.all([fetchMovies(), fetchTVShows(), fetchTVAnime()]).then(() => setIsLoading(false));
+        const fetchVideoGames = async () => {
+            try {
+                const res = await fetch(`https://api.rawg.io/api/games?key=15c59c213ec34cc0a6f3fb4fd0489279&page=1`);
+                const data = await res.json();
+                setVideojocs(data.results);
+            } catch (error) {
+                console.error("Error carregant els videojocs:", error);
+            }
+        };
+
+        fetchVideoGames();
+    }, []);
+
+    useEffect(() => {
+        Promise.all([fetchMovies(), fetchTVShows(), fetchTVAnime() ]).then(() => setIsLoading(false));
     }, []);
 
     if (isLoading) {
@@ -133,12 +147,12 @@ function PaginaPrincipal() {
                 <hr />
                 <div className='contentvideojocs'>
                     <Slider {...settings}>
-                        {tvAnime.map((anime) => (
-                            <div key={anime.id} className="item">
-                                <h3>{anime.name}</h3>
-                                <img className="poster" src={`https://image.tmdb.org/t/p/w500${anime.poster_path}`} alt={anime.name} />
-                                <p>Valoració: {anime.vote_average}</p>
-                            </div>
+                        {tvVideojocs.map((joc) => (
+                        <div key={joc.id} className="item">
+                            <h3>{joc.name}</h3>
+                            <img className="poster" src={joc.background_image} alt={joc.name} />
+                            <p>Valoració: {joc.rating ? joc.rating.toFixed(1) : 'N/A'}</p>
+                        </div>
                         ))}
                     </Slider>
                 </div>
